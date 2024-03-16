@@ -44,12 +44,12 @@ export default function Home() {
       <Navbar />
 
 
-      <div className="embla relative">
+      <div className="embla relative max-w-full lg:max-w-[85%]">
       <div className="embla__viewport embla__parallax embla__parallax__layer" ref={emblaRef}>
         <div className="embla__container">
         {sliderData?.map((item) => {
           return (
-            <div className="embla__slide relative" key={item.id}>
+            <div className="embla__slide relative pl-0 lg:pl-4" key={item.id}>
 
                 {/* the image */}
               <img className="w-full h-full embla__parallax__img" src={item.url} alt="" />
