@@ -5,23 +5,26 @@ import React, { useState } from 'react';
 import "@/styles/navbar.css"
 import { Button } from './ui/button';
 
+import { usePathname } from 'next/navigation';
+
 // import { Container } from './styles';
 
 const navLinks = [
-    { name: "ARTISTS", href: "/artists" },
-    { name: "EXHIBITIONS", href: "/exhibitions" },
+    { name: "HOME", href: "/" },
+    { name: "ARTWORKS", href: "/artworks" },
     { name: "SPECIAL PROJECTS", href: "/projects" },
-    { name: "VIEWING ROOMS", href: "/rooms" },
-    { name: "FAIRS", href: "/fairs" },
+    // { name: "VIEWING ROOMS", href: "/rooms" },
     { name: "NEWS", href: "/news" },
+    { name: "ABOUT", href: "/about" },
 ]
 
 const Navbar: React.FC = () => {
 
-    const [isOpen, setIsOpen] = useState(false)
+    const pathName = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
 
     const menuHandler = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(!isOpen);
     }
 
     return (
@@ -37,7 +40,16 @@ const Navbar: React.FC = () => {
             <ul className={`text-[14px] lg:text-[15px] bg-white flex flex-col items-center gap-8 w-full md:flex-row md:justify-center ${isOpen ? 'h-[100vh] -translate-y-0 pt-10' : 'h-0 -translate-y-[100vh]'} md:h-fit md:-translate-y-0`}>
                 {navLinks.map((link) => {
                     return (
-                        <Link href={link.href} key={link.name}>{link.name}</Link>
+                        <Link 
+                        href={link.href} 
+                        key={link.name}
+                        className="border-b"
+                        style={{ 
+                            ["border-color" as any]: `${pathName === link.href ? "#020817" : "transparent"}`,
+                          }}
+                        >
+                            {link.name}
+                        </Link>
                     )
                 })}
             </ul>
