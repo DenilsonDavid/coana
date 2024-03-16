@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
                         <Link 
                         href={link.href} 
                         key={link.name}
-                        className="border-b"
+                        className="border-b-2"
                         style={{ 
                             ["border-color" as any]: `${pathName === link.href ? "#020817" : "transparent"}`,
                           }}
