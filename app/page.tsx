@@ -23,12 +23,13 @@ import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import sliderData from "@/lib/sliderData";
+import Link from "next/link";
 
 export default function Home() {
 
 
   // const [emblaRef, emblaApi] = useEmblaCarousel()
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 6500 })])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -44,37 +45,48 @@ export default function Home() {
       <Navbar />
 
 
-      <div className="embla relative max-w-full lg:max-w-[85%]">
+      <div className="embla relative max-w-full lg:max-w-[100%]">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
         {sliderData?.map((item) => {
           return (
             <div className="embla__slide relative pl-0 lg:pl-4" key={item.id}>
+            <div className="overlay absolute top-0 w-full z-10"></div>
                 <div className="embla__parallax">
                 <div className="embla__parallax__layer">
               <img className="w-full h-full embla__slide__img embla__parallax__img" src={item.url} alt="" />
               </div>
               </div>
-              <h1 className="absolute top-1/4 left-1/2 w-full md:w-auto transform -translate-x-1/2 translate-y-[3rem] md:translate-y-[9rem]  lg:translate-y-48 bg-slate-950 py-2 lg:py-4 px-2 lg:px-8 text-xl lg:text-2xl text-white font-extrabold">
+              {/* <h1 className="absolute top-1/4 left-1/2 w-full md:w-auto transform -translate-x-1/2 translate-y-[3rem] md:translate-y-[9rem]  lg:translate-y-48 bg-red-600  py-2 lg:py-4 px-2 lg:px-8 text-xl lg:text-2xl text-white font-extrabold">
                 {item.title}
-              </h1>
+              </h1> */}
+              <div className="text_effect effect"></div> 
+                <div className="effect reveal_text z-20"> 
+                  {/* <span>into amazing experiences</span> */}
+                  <div className="overflow-hidden absolute top-1/4 left-1/2 w-auto transform -translate-x-1/2 translate-y-[3rem] md:translate-y-[9rem] lg:translate-y-48 bg-white mx-2 px-2 py-2 lg:py-4 lg:px-8 text-xl lg:text-2xl text-slate-800 font-extrabold shadow-lg shadow-slate-950">
+                  <span className="max-w-[80%] flex flex-wrap">{item.title}</span>
+                  </div>
+                  {/* <h1 className="absolute top-1/4 left-1/2 w-full md:w-auto transform -translate-x-1/2 translate-y-[3rem] md:translate-y-[9rem] lg:translate-y-48 bg-white  py-2 lg:py-4 lg:px-8 text-xl lg:text-2xl text-slate-800 font-extrabold shadow-lg shadow-slate-950">
+                <span>{item.title}</span>
+              </h1> */}
+                </div>
             </div>
           );
         })}
         </div>
       </div>
       <div className="embla__buttons w-full px-20 flex justify-between">
-      <button className="embla__prev embla__button bg-slate-950 text-white py-2 px-8 shadow-xl flex items-center justify-center" onClick={scrollPrev}>
-        Prev
+      <button className="embla__prev embla__button rounded-full p-4 w-[50px] h-[50px] bg-white text-slate-800 shadow-lg shadow-slate-950 hidden lg:flex items-center justify-center" onClick={scrollPrev}>
+      <i className="ri-arrow-left-s-line text-[26px]"></i>
       </button>
-      <button className="embla__prev embla__button bg-slate-950 text-white py-2 px-8 shadow-xl flex items-center justify-center" onClick={scrollNext}>
-        Next
+      <button className="embla__prev embla__button rounded-full p-4 w-[50px] h-[50px] bg-white text-slate-800 shadow-lg shadow-slate-950 hidden lg:flex items-center justify-center" onClick={scrollNext}>
+      <i className="ri-arrow-right-s-line text-[26px]"></i>
       </button>
       </div>
     </div>
 
       <section className="container mt-16 px-4 xl:px-20 border-none border-blue-800">
-        <h2 className="text-4xl">On View</h2>
+        <h2 className="text-4xl">Em Exibição</h2>
 
         <div className="mt-8 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-0 border-slate-950">
         <div className="pb-8 md:pr-5">
@@ -89,7 +101,7 @@ export default function Home() {
                     className="w-full h-auto md:h-[200px] lg:h-[180px] object-cover"
                   />
                 </figure>
-                <h2 className="card-title p-0 mt-3">ADEL ABDESSEMED!</h2>
+                <Link href="/exhibitions"><h2 className="card-title p-0 mt-3">ADEL ABDESSEMED!</h2></Link>
                   <p className="font-light">'Jam Proximus Ardet, la dernière vidéo'</p>
                   <span className="font-light text-[13px]">20/01/2024 - 31/03/2024</span>
           </div>
@@ -159,7 +171,7 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className="text-4xl mt-14">Future</h2>
+        <h2 className="text-4xl mt-14">Em Breve</h2>
         <div className="mt-8 mb-24 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-0 border-slate-950">
         <div className="pb-8 md:pr-5">
             <h5 className="viewTitle text-[17px] text-red-600 border-b-2 border-red-600">SAN GIMIGNANO</h5>
@@ -213,8 +225,8 @@ export default function Home() {
 
 
 
-        <h2 className="text-4xl mt-14">Special Projects</h2>
-            <h5 className="mt-8 w-auto text-[17px] text-gray-950 border-b-2 border-slate-950">SPECIAL PROJECTS</h5>
+        <h2 className="text-4xl mt-14">Projetos Especiais</h2>
+            <h5 className="mt-8 w-auto text-[17px] text-gray-950 border-b-2 border-slate-950">PROJECTOS ESPECIAIS</h5>
         <div className="mb-24 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-0 border-slate-950">
         <div className="pb-8 md:pr-5">
             <figure className="mt-3">
@@ -264,7 +276,7 @@ export default function Home() {
         </div>
 
         
-        <h2 className="text-4xl mt-4 w-full">Locations</h2>
+        <h2 className="text-4xl mt-4 w-full">Visite as Obras</h2>
         <div className="locations mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-0 border-slate-950">
           <div className="md:border-r border-slate-300 pb-20 md:pr-5">
             <h4 className="pt-8 border-t-[6px] border-t-red-600 text-[22px] font-medium">SAN GIMIGNANO</h4>
@@ -274,7 +286,7 @@ export default function Home() {
               <li><a href="tel:+390577943134">Tel. +39 0577 943134</a></li>
               <li><a href="mailto:sangimignano@galleriacontinua.com">sangimignano@galleriacontinua.com</a></li>
             </ul>
-            <p className="font-light mt-7 text-[14px]">Galleria Continua's space in San Gimignano is open from Monday to Sunday, 10am-1pm and 2pm-7pm. Closed on National Holidays and on January 31st. It is possible to schedule your visit please send us an e-mail at sangimignano@galleriacontinua.com or book via the form by selecting 'book your visit'.</p>
+            <p className="font-light mt-7 text-[14px]">O espaço da Galleria Continua em San Gimignano funciona de segunda a domingo, das 10h às 13h e das 14h às 19h. Fechado nos feriados nacionais e no dia 31 de janeiro. É possível agendar a sua visita envie-nos um e-mail para sangimignano@galleriacontinua.com ou marque através do formulário selecionando 'agendar a sua visita'.</p>
           </div>
           <div className="lg:border-r border-slate-300 pb-20 md:px-5">
             <h4 className="pt-8 text-[22px] font-medium border-t-[6px] border-t-green-600">BEIJING</h4>
@@ -284,7 +296,7 @@ export default function Home() {
               <li><a href="tel:+390577943134">Tel. +39 0577 943134</a></li>
               <li><a href="mailto:sangimignano@galleriacontinua.com">sangimignano@galleriacontinua.com</a></li>
             </ul>
-            <p className="font-light mt-7 text-[14px]">Galleria Continua's space in San Gimignano is open from Monday to Sunday, 10am-1pm and 2pm-7pm. Closed on National Holidays and on January 31st. It is possible to schedule your visit please send us an e-mail at sangimignano@galleriacontinua.com or book via the form by selecting 'book your visit'.</p>
+            <p className="font-light mt-7 text-[14px]">O espaço da Galleria Continua em San Gimignano funciona de segunda a domingo, das 10h às 13h e das 14h às 19h. Fechado nos feriados nacionais e no dia 31 de janeiro. É possível agendar a sua visita envie-nos um e-mail para sangimignano@galleriacontinua.com ou marque através do formulário selecionando 'agendar a sua visita'.</p>
           </div>
           <div className="md:border-r border-slate-300 lg:border-none pb-20 md:pr-5 lg:pl-5">
             <h4 className="pt-8 text-[22px] font-medium border-t-[6px] border-t-blue-600">LES MOULINS</h4>
@@ -294,7 +306,7 @@ export default function Home() {
               <li><a href="tel:+390577943134">Tel. +39 0577 943134</a></li>
               <li><a href="mailto:sangimignano@galleriacontinua.com">sangimignano@galleriacontinua.com</a></li>
             </ul>
-            <p className="font-light mt-7 text-[14px]">Galleria Continua's space in San Gimignano is open from Monday to Sunday, 10am-1pm and 2pm-7pm. Closed on National Holidays and on January 31st. It is possible to schedule your visit please send us an e-mail at sangimignano@galleriacontinua.com or book via the form by selecting 'book your visit'.</p>
+            <p className="font-light mt-7 text-[14px]">O espaço da Galleria Continua em San Gimignano funciona de segunda a domingo, das 10h às 13h e das 14h às 19h. Fechado nos feriados nacionais e no dia 31 de janeiro. É possível agendar a sua visita envie-nos um e-mail para sangimignano@galleriacontinua.com ou marque através do formulário selecionando 'agendar a sua visita'.</p>
           </div>
         </div>
       </section>

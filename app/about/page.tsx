@@ -20,14 +20,7 @@ const About: React.FC = () => {
                 {/* <h2 className="text-3xl mb-6">Main news</h2> */}
                 <div className="grid gap-8 grid-cols-1 md:grid-cols-2 mb-16 py-6 border-t-2 border-red-500">
                     <figure className="">
-                        <Image
-                            src={News1}
-                            alt='Bridgee avatar'
-                            width={100}
-                            height={100}
-                            quality={100}
-                            className="w-full h-auto object-cover"
-                        />
+                        <img className="w-full h-auto" src="https://i.ibb.co/XL2dWCh/crafting3.jpg" alt="" />
                     </figure>
                     <div className="text">
                         <p className="font-light">Sebastião Coana nascido em 1987 é um artista contemporâneo moçambicano conhecido por realizar um conjunto multifacetado de trabalhos criativos, incluindo instalações escultóricas, artes de rua e pinturas a óleo inspiradas e fascinadas pela vida quotidiana e pelas cores dinâmicas. Obras de arte públicas recentes incluem: História da Matola: arte mural com mais de 50 m de largura para o recém-construído edifício municipal da Matola, na cidade da Matola. Artes murais para o projeto Traga de volta Maputo: bloco de 3.000 metros quadrados com uma série de obras de arte que transformaram um distrito da luz vermelha em um novo turismo que emprega profissionais do sexo como faxineiras, a área foi pintada com murais de arte com mensagens de esperança e integração social e empoderamento de profissionais do sexo na baixa da cidade de Maputo o projecto está em curso com o apoio de empresas locais e do governo do município de maputo.</p>
@@ -38,26 +31,12 @@ const About: React.FC = () => {
                         <p className="font-light">Sebastião Coana nasceu numa zona rural do distrito de Manhiça, onde sobreviveu aos brutais ataques da guerra civil com a sua família. Crescendo em uma comunidade subdesenvolvida destruída pela guerra civil, ele desenvolveu um forte senso de desenvolvimento social e suportou o fardo da reconstrução, canalizando parte de sua renda artística para causas sociais em áreas rurais. A Coana recebeu vários prémios de inovação para objectivos de desenvolvimento sustentável, incluindo o prémio internacional de 2018 do AbinBev Africa Sustainability Challenge para as alterações climáticas na África do Sul, e o TOTAL startupper de desenvolvimento rural sustentável do ano de 2019 em Moçambique, entre outros prémios.</p>
                     </div>
                     <figure className="order-1 md:order-2">
-                        <Image
-                            src={News1}
-                            alt='Bridgee avatar'
-                            width={100}
-                            height={100}
-                            quality={100}
-                            className="w-full h-auto object-cover"
-                        />
+                        <img className="w-full h-auto" src="https://i.ibb.co/DbTZgWM/news1.jpg" alt="" />
                     </figure>
                 </div>
                 <div className="grid gap-8 grid-cols-1 md:grid-cols-2 mb-16 py-6 border-t-2 border-blue-500">
                     <figure className="">
-                        <Image
-                            src={News1}
-                            alt='Bridgee avatar'
-                            width={100}
-                            height={100}
-                            quality={100}
-                            className="w-full h-auto object-cover"
-                        />
+                        <img className="w-full h-auto" src="https://i.ibb.co/0B3MDTt/about2.jpg" alt="" />
                     </figure>
                     <div className="text">
                         <p className="font-light">Formou-se na Escola de Arquitectura da Academia Central de Belas Artes da China em Pequim (CAFA) no ano de 2012 e possui mestrado em Finanças Internacionais na Universidade de Negócios e Economia Internacionais (UIBE) em Pequim. Descobriu o seu talento artístico ainda jovem em 1995, mais tarde no ano 2000 ingressou no programa de arte juvenil do Museu Nacional de Artes de Maputo. As suas pinturas e murais de arte de rua estão em diversas colecções públicas e privadas em Moçambique, incluindo o Museu Nacional de Artes, e em mais de 25 países em todo o mundo, incluindo o distrito artístico China-Pequim 798, Nova Iorque, Moçambique, África do Sul, Finlândia e outros. Coana é fluente em inglês, português e mandarim.</p>

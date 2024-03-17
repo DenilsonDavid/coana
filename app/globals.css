@@ -36,9 +36,8 @@ body {
 * {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
+  image-rendering: optimizeQuality;
 }
-
-
 
 
 .embla {
@@ -174,9 +173,63 @@ body {
 
 @media (min-width: 1024px) {
   .embla {
-    --slide-size: 90%;
+    /* --slide-size: 90%; */
   }
 }
+
+
+
+
+
+/* Embla slide text effect */
+.overlay {
+  height: var(--slide-height);
+  background-color: rgba(0, 0, 0, .0);
+}
+
+.effect {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.text_effect {
+  animation: showup 6500ms infinite;
+}
+
+.reveal_text {
+  width: 0px;
+  animation: reveal 6500ms infinite;
+}
+
+.reveal_text span {
+  margin-left: -255px;
+  animation: slidein 6500ms infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-500px; }
+    20% { margin-left:-500px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:255px;}
+}
+
+
 
 
 /* .embla {

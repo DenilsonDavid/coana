@@ -1,3 +1,4 @@
 .triggersList button[data-state="active"] {
     border-color: #020817;
+    font-size: 17px;
 }

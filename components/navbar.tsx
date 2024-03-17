@@ -10,12 +10,12 @@ import { usePathname } from 'next/navigation';
 // import { Container } from './styles';
 
 const navLinks = [
-    { name: "HOME", href: "/" },
+    { name: "PÁGINA INICIAL", href: "/" },
     { name: "ARTWORKS", href: "/artworks" },
-    { name: "SPECIAL PROJECTS", href: "/projects" },
-    // { name: "VIEWING ROOMS", href: "/rooms" },
-    { name: "NEWS", href: "/news" },
-    { name: "ABOUT", href: "/about" },
+    // { name: "SPECIAL PROJECTS", href: "/projects" },
+    { name: "COANA CRAFTING", href: "/crafting" },
+    { name: "NOTÍCIAS", href: "/news" },
+    { name: "SOBRE", href: "/about" },
 ]
 
 const Navbar: React.FC = () => {
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
                         key={link.name}
                         className="border-b-2"
                         style={{ 
-                            ["border-color" as any]: `${pathName === link.href ? "#020817" : "transparent"}`,
+                            ["borderColor" as any]: `${pathName === link.href ? "#020817" : "transparent"}`,
                           }}
                         >
                             {link.name}

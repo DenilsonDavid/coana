@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
             <li><a href="#">COOKIE POLICY</a></li>
         </ul>
         <div className="flex flex-col font-light">
-        <span className="self-end">FOLLOW ME</span>
-        <ul className="flex self-end gap-5">
-            <li><a href="#">FACEBOOK</a></li>
-            <li><a href="#">INSTAGRAM</a></li>
-            <li><a href="#">TWITTER</a></li>
-            <li><a href="#">LINKEDIN</a></li>
-            <li><a href="#">YOUTUBE</a></li>
+        <span className="self-end mb-4">SIGA-ME</span>
+        <ul className="flex self-end gap-8 text-[22px]">
+            <li><a href="#"><i className="ri-facebook-circle-line"></i></a></li>
+            <li><a href="#"><i className="ri-instagram-line"></i></a></li>
+            <li><a href="#"><i className="ri-twitter-x-line"></i></a></li>
+            <li><a href="#"><i className="ri-linkedin-box-line"></i></a></li>
+            <li><a href="#"><i className="ri-youtube-line"></i></a></li>
         </ul>
         </div>
     </div>
